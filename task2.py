@@ -39,3 +39,4 @@ def tests():
     assert teamData['BC']['gamesPlayed'] == 12
     assert teamData['BC']['wins'] == 5
 
+tests()
