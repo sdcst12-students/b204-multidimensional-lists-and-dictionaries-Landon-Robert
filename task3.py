@@ -60,9 +60,6 @@ If the Pokémon becomes enraged, the flame burns fiercely.
 
 """
 
-
-
-
 pokemon = [
   {
     "id": 1,
@@ -31847,3 +31844,18 @@ pokemon = [
   }
 ]
 
+print("Choose a pokemon by:\n1. ID\n2. English name")
+Choice1 = int(input("Choice: "))
+if Choice1 == 1:
+  ID = int(input("Enter pokemon ID: "))
+  print(pokemon[ID-1]['name'])
+  print(pokemon[ID-1]['type'])
+  print(pokemon[ID-1]['base'])
+  print(f"Description: {pokemon[ID-1]['description']}")
+  
+elif Choice1 == 2:
+  Name = input("Enter pokemon name in english: ")
+  print(pokemon[Name]["english"])
+
+else:
+  print("That is not a valid option")

@@ -89,12 +89,9 @@ teamData = {
 
     }
 }
-for i in teams:
-    for j in games:
-    teamdata[i].append(
 
-
-
+for i in games:
+    
 def tests():
     assert teamData['BC']['gamesPlayed'] == 12
     assert teamData['BC']['wins'] == 5
