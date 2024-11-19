@@ -31848,14 +31848,24 @@ print("Choose a pokemon by:\n1. ID\n2. English name")
 Choice1 = int(input("Choice: "))
 if Choice1 == 1:
   ID = int(input("Enter pokemon ID: "))
-  print(pokemon[ID-1]['name'])
-  print(pokemon[ID-1]['type'])
-  print(pokemon[ID-1]['base'])
-  print(f"Description: {pokemon[ID-1]['description']}")
+  print(f"{pokemon[ID-1]['name']['english'].upper()}! I CHOOSE YOU!")
+  x = " "
+  for i in pokemon[ID-1]['type']:
+    if pokemon[ID-1]['type'].index(i) == 0:
+      x = x + i
+    else:
+      x = x + ", " + i
+  print(f"{pokemon[ID-1]['name']['english']} is a" + x + " type pokemon.")
+  for i in pokemon[ID-1]['base']:
+    print(f"{i} {pokemon[ID-1]['base'][i]}")
+  print(f"Description: \n{pokemon[ID-1]['description']}")
   
 elif Choice1 == 2:
   Name = input("Enter pokemon name in english: ")
-  print(pokemon[Name]["english"])
+  if Name in pokemon:
+    print(f"{pokemon[Name]['english'].upper()}! I CHOOSE YOU!")
 
+  if Name not in pokemon:
+    print("I'm sorry, I can't find the name of the Pokemon. Did you spell it correctly?")
 else:
   print("That is not a valid option")
